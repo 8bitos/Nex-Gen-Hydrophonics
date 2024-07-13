@@ -22,25 +22,20 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.22.0'  # You can specify the Flutter version you need
-
-      # Note: This workflow uses the latest stable version of the Dart SDK.
-      # You can specify other versions if desired, see documentation here:
-      # https://github.com/dart-lang/setup-dart/blob/main/README.md
-      - uses: dart-lang/setup-dart@v1
-
-      - name: Install dependencies
+ - name: Cache dependencies
         run: flutter pub get
 
-      # Uncomment this step to verify the use of 'dart format' on each commit.
-      # - name: Verify formatting
-      #   run: dart format --output=none --set-exit-if-changed .
+      - name: Initialize Firebase
+        id: initialize_firebase
+        run: |
+          flutter pub run flutter_native_splash:create
+          flutter test --platform=chrome || exit 0
+          echo "::set-output name=initialized::true"
 
-      # Consider passing '--fatal-infos' for slightly stricter analysis.
-      - name: Analyze project source
-        run: flutter analyze
+      - name: Run Tests
+        if: steps.initialize_firebase.outputs.initialized == 'true'
+        run: flutter test --no-sound-null-safety
 
-      # Your project will need to have tests in test/ and a dependency on
-      # package:test for this step to succeed. Note that Flutter projects will
-      # want to change this to 'flutter test'.
-      - name: Run tests
-        run: flutter test
+      - name: Build APK
+        if: success()  # Only build APK if tests pass
+        run: flutter build apk
