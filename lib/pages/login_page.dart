@@ -73,11 +73,11 @@ class _LoginPageState extends State<LoginPage> {
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text('Google Sign-In'),
-              content: Text('Sign-in process canceled.'),
+              title: const Text('Google Sign-In'),
+              content: const Text('Sign-in process canceled.'),
               actions: <Widget>[
                 TextButton(
-                  child: Text('OK'),
+                  child: const Text('OK'),
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -102,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
       // Navigate to home page after successful sign-in
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => const HomePage()),
       );
     } catch (e) {
       print(e.toString());
@@ -110,12 +110,12 @@ class _LoginPageState extends State<LoginPage> {
         context: context,
         builder: (context) {
           return AlertDialog(
-            title: Text('Google Sign-In'),
-            content:
-                Text('Failed to sign in with Google. Please try again later.'),
+            title: const Text('Google Sign-In'),
+            content: const Text(
+                'Failed to sign in with Google. Please try again later.'),
             actions: <Widget>[
               TextButton(
-                child: Text('OK'),
+                child: const Text('OK'),
                 onPressed: () {
                   Navigator.of(context).pop();
                 },

@@ -118,9 +118,9 @@ class HomePageContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> gridItems = [
       {"text": 'Kapasitas', "icon": Icons.storage, "page": Kapasitas()},
-      {"text": 'Suhu', "icon": Icons.thermostat, "page": Suhu()},
+      {"text": 'Suhu', "icon": Icons.thermostat, "page": const Suhu()},
       {"text": 'Kamera', "icon": Icons.camera_alt, "page": const Kamera()},
-      {"text": 'Tanaman', "icon": Icons.grass, "page": TanamanScreen()},
+      {"text": 'Tanaman', "icon": Icons.grass, "page": const TanamanScreen()},
     ];
 
     return SafeArea(

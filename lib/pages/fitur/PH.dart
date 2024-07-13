@@ -5,6 +5,8 @@ import 'package:tim1/services/suhu_service.dart';
 import 'package:tim1/services/weather_service.dart';
 
 class PhTanaman extends StatefulWidget {
+  const PhTanaman({super.key});
+
   @override
   _PhTanamanState createState() => _PhTanamanState();
 }
@@ -35,9 +37,9 @@ class _PhTanamanState extends State<PhTanaman> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 241, 250, 244),
+      backgroundColor: const Color.fromARGB(255, 241, 250, 244),
       appBar: AppBar(
-        title: Text('Suhu'),
+        title: const Text('Suhu'),
       ),
       body: RefreshIndicator(
         onRefresh: () => fetchWeather(),
@@ -45,10 +47,11 @@ class _PhTanamanState extends State<PhTanaman> {
           stream: databaseService.temperatureStream,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             }
             if (!snapshot.hasData) {
-              return Center(child: Text('Failed to load temperature data'));
+              return const Center(
+                  child: Text('Failed to load temperature data'));
             }
             final temperatureMap = snapshot.data as Map<String, dynamic>;
             final suhuUdara = temperatureMap['udara'];
@@ -85,20 +88,20 @@ class _PhTanamanState extends State<PhTanaman> {
                           width: 150,
                           height: 150,
                         ),
-                        SizedBox(width: 16),
+                        const SizedBox(width: 16),
                         Container(
                           height: 100, // Adjust height of separator as needed
                           width: 1, // Width of the vertical line
                           color: Colors.grey, // Color of the line
-                          margin: EdgeInsets.symmetric(
+                          margin: const EdgeInsets.symmetric(
                               vertical: 8), // Add margin to position the line
                         ), // Add space between animation and text
-                        SizedBox(width: 16),
+                        const SizedBox(width: 16),
                         Column(
                           children: [
                             Text(
                               '${(double.parse(suhuUdara ?? '0')).toInt()}°C',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 60, fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -107,56 +110,57 @@ class _PhTanamanState extends State<PhTanaman> {
                     ),
                   Text(
                     '${weatherData!['weather'][0]['description']}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 14,
                       fontStyle: FontStyle.italic,
                     ),
                   ),
 
-                  SizedBox(height: 8), // Add space between weather and location
+                  const SizedBox(
+                      height: 8), // Add space between weather and location
                   Text(
                     '$location',
-                    style: TextStyle(fontSize: 18),
+                    style: const TextStyle(fontSize: 18),
                   ),
-                  SizedBox(height: 32),
+                  const SizedBox(height: 32),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Column(
                         children: [
-                          Icon(Icons.thermostat, size: 30),
-                          SizedBox(height: 8),
+                          const Icon(Icons.thermostat, size: 30),
+                          const SizedBox(height: 8),
                           Text(
                             'Suhu Air: ${suhuAir ?? 'N/A'}°C',
-                            style: TextStyle(fontSize: 16),
+                            style: const TextStyle(fontSize: 16),
                           ),
                         ],
                       ),
                       Column(
                         children: [
-                          Icon(Icons.opacity, size: 30),
-                          SizedBox(height: 8),
+                          const Icon(Icons.opacity, size: 30),
+                          const SizedBox(height: 8),
                           Text(
                             'Kelembaban: ${kelembaban ?? 'N/A'}%',
-                            style: TextStyle(fontSize: 16),
+                            style: const TextStyle(fontSize: 16),
                           ),
                         ],
                       ),
                     ],
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Expanded(
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          SizedBox(height: 32),
-                          SizedBox(height: 32),
+                          const SizedBox(height: 32),
+                          const SizedBox(height: 32),
                           LineChartWidget(
                             suhuAir: suhuAirList,
                             suhuUdara: suhuUdaraList,
                             kelembaban: kelembabanList,
                           ),
-                          BarChartWidget(),
+                          const BarChartWidget(),
                         ],
                       ),
                     ),
@@ -198,6 +202,8 @@ class _PhTanamanState extends State<PhTanaman> {
 }
 
 class BarChartWidget extends StatelessWidget {
+  const BarChartWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -209,11 +215,11 @@ class BarChartWidget extends StatelessWidget {
               color: Colors.grey[200], // Background color
               borderRadius: BorderRadius.circular(10), // Rounded corners
             ),
-            padding: EdgeInsets.all(10), // Padding around the chart
+            padding: const EdgeInsets.all(10), // Padding around the chart
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 20.0),
+                const Padding(
+                  padding: EdgeInsets.only(bottom: 20.0),
                   child: Text('Mingguan', style: TextStyle(fontSize: 20)),
                 ),
                 Expanded(
@@ -252,10 +258,10 @@ class BarChartWidget extends StatelessWidget {
                       ],
                       borderData: FlBorderData(show: false),
                       titlesData: FlTitlesData(
-                        leftTitles: AxisTitles(
+                        leftTitles: const AxisTitles(
                           sideTitles: SideTitles(showTitles: false),
                         ), // Hide left titles
-                        topTitles: AxisTitles(
+                        topTitles: const AxisTitles(
                           sideTitles: SideTitles(showTitles: false),
                         ), // Hide top titles
                         bottomTitles: AxisTitles(
@@ -270,28 +276,28 @@ class BarChartWidget extends StatelessWidget {
                               Widget text;
                               switch (value.toInt()) {
                                 case 0:
-                                  text = Text('S', style: style);
+                                  text = const Text('S', style: style);
                                   break;
                                 case 1:
-                                  text = Text('S', style: style);
+                                  text = const Text('S', style: style);
                                   break;
                                 case 2:
-                                  text = Text('R', style: style);
+                                  text = const Text('R', style: style);
                                   break;
                                 case 3:
-                                  text = Text('K', style: style);
+                                  text = const Text('K', style: style);
                                   break;
                                 case 4:
-                                  text = Text('J', style: style);
+                                  text = const Text('J', style: style);
                                   break;
                                 case 5:
-                                  text = Text('S', style: style);
+                                  text = const Text('S', style: style);
                                   break;
                                 case 6:
-                                  text = Text('M', style: style);
+                                  text = const Text('M', style: style);
                                   break;
                                 default:
-                                  text = Text('', style: style);
+                                  text = const Text('', style: style);
                                   break;
                               }
                               return SideTitleWidget(
@@ -303,7 +309,7 @@ class BarChartWidget extends StatelessWidget {
                           ),
                         ),
                       ),
-                      gridData: FlGridData(show: false),
+                      gridData: const FlGridData(show: false),
                     ),
                   ),
                 ),
@@ -311,7 +317,8 @@ class BarChartWidget extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 10), // Space between the chart and the text below
+        const SizedBox(
+            height: 10), // Space between the chart and the text below
       ],
     );
   }
@@ -323,6 +330,7 @@ class LineChartWidget extends StatelessWidget {
   final List<double> kelembaban;
 
   LineChartWidget({
+    super.key,
     required this.suhuAir,
     required this.suhuUdara,
     required this.kelembaban,
@@ -337,18 +345,18 @@ class LineChartWidget extends StatelessWidget {
           color: Colors.grey[200],
           borderRadius: BorderRadius.circular(10),
         ),
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 20.0),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 20.0),
               child: Text('Data Harian', style: TextStyle(fontSize: 20)),
             ),
             Expanded(
               child: LineChart(
                 LineChartData(
                   titlesData: FlTitlesData(
-                    leftTitles: AxisTitles(
+                    leftTitles: const AxisTitles(
                       sideTitles: SideTitles(showTitles: true),
                     ),
                     bottomTitles: AxisTitles(
@@ -363,31 +371,31 @@ class LineChartWidget extends StatelessWidget {
                           Widget text;
                           switch (value.toInt()) {
                             case 0:
-                              text = Text('00:00', style: style);
+                              text = const Text('00:00', style: style);
                               break;
                             case 1:
-                              text = Text('03:00', style: style);
+                              text = const Text('03:00', style: style);
                               break;
                             case 2:
-                              text = Text('06:00', style: style);
+                              text = const Text('06:00', style: style);
                               break;
                             case 3:
-                              text = Text('09:00', style: style);
+                              text = const Text('09:00', style: style);
                               break;
                             case 4:
-                              text = Text('12:00', style: style);
+                              text = const Text('12:00', style: style);
                               break;
                             case 5:
-                              text = Text('15:00', style: style);
+                              text = const Text('15:00', style: style);
                               break;
                             case 6:
-                              text = Text('18:00', style: style);
+                              text = const Text('18:00', style: style);
                               break;
                             case 7:
-                              text = Text('21:00', style: style);
+                              text = const Text('21:00', style: style);
                               break;
                             default:
-                              text = Text('', style: style);
+                              text = const Text('', style: style);
                               break;
                           }
                           return SideTitleWidget(
@@ -399,7 +407,7 @@ class LineChartWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  gridData: FlGridData(show: true),
+                  gridData: const FlGridData(show: true),
                   borderData: FlBorderData(show: true),
                   lineBarsData: [
                     LineChartBarData(

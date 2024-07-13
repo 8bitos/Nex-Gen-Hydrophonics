@@ -21,24 +21,24 @@ class _BottomNavBarState extends State<BottomNavBar> {
       key: _bottomNavigationKey,
       index: widget.currentIndex,
       items: [
-        CurvedNavigationBarItem(
-          child: Icon(Icons.home),
+        const CurvedNavigationBarItem(
+          child: const Icon(Icons.home),
           label: 'Home',
         ),
-        CurvedNavigationBarItem(
+        const CurvedNavigationBarItem(
           child: Icon(Icons.dashboard),
           label: 'Dashboard',
         ),
-        CurvedNavigationBarItem(
+        const CurvedNavigationBarItem(
           child: Icon(Icons.person),
           label: 'Profile',
         ),
       ],
       color: Colors.white,
       buttonBackgroundColor: Colors.white,
-      backgroundColor: Color.fromARGB(0, 0, 94, 255),
+      backgroundColor: const Color.fromARGB(0, 0, 94, 255),
       animationCurve: Curves.easeInOut,
-      animationDuration: Duration(milliseconds: 300),
+      animationDuration: const Duration(milliseconds: 300),
       onTap: widget.onTap,
       letIndexChange: (index) => true,
     );

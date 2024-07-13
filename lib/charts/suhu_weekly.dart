@@ -6,7 +6,8 @@ class LineChartWidget extends StatelessWidget {
   final List<double> suhuUdara;
   final List<double> kelembaban;
 
-  LineChartWidget({
+  const LineChartWidget({
+    super.key,
     required this.suhuAir,
     required this.suhuUdara,
     required this.kelembaban,
@@ -31,21 +32,21 @@ class LineChartWidget extends StatelessWidget {
           dataSource: suhuAir,
           xValueMapper: (value, index) => index!,
           yValueMapper: (value, _) => value,
-          markerSettings: MarkerSettings(isVisible: true),
+          markerSettings: const MarkerSettings(isVisible: true),
         ),
         LineSeries<double, int>(
           name: 'Suhu Udara',
           dataSource: suhuUdara,
           xValueMapper: (value, index) => index!,
           yValueMapper: (value, _) => value,
-          markerSettings: MarkerSettings(isVisible: true),
+          markerSettings: const MarkerSettings(isVisible: true),
         ),
         LineSeries<double, int>(
           name: 'Kelembaban',
           dataSource: kelembaban,
           xValueMapper: (value, index) => index!,
           yValueMapper: (value, _) => value,
-          markerSettings: MarkerSettings(isVisible: true),
+          markerSettings: const MarkerSettings(isVisible: true),
         ),
       ],
     );

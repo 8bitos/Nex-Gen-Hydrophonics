@@ -3,6 +3,8 @@ import 'package:tim1/model/model_tanaman.dart';
 import 'package:tim1/services/tanaman_service.dart';
 
 class TanamanScreen extends StatefulWidget {
+  const TanamanScreen({super.key});
+
   @override
   _TanamanScreenState createState() => _TanamanScreenState();
 }
@@ -29,18 +31,18 @@ class _TanamanScreenState extends State<TanamanScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
-        title: Text('Tanaman'),
+        title: const Text('Tanaman'),
         centerTitle: true,
         backgroundColor: Colors.white, // Example background color
         elevation: 4, // Example shadow elevation
       ),
       body: _tanamanData == null
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : Padding(
               padding: const EdgeInsets.all(8.0),
               child: ListView(
@@ -55,7 +57,7 @@ class _TanamanScreenState extends State<TanamanScreen> {
 
   Widget buildTanamanCard(String tanamanName) {
     return Card(
-      margin: EdgeInsets.symmetric(vertical: 8.0),
+      margin: const EdgeInsets.symmetric(vertical: 8.0),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -63,7 +65,7 @@ class _TanamanScreenState extends State<TanamanScreen> {
           children: <Widget>[
             Text(
               tanamanName,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
@@ -93,7 +95,7 @@ class _TanamanScreenState extends State<TanamanScreen> {
         children: <Widget>[
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16.0,
               fontWeight: FontWeight.bold,
             ),
@@ -117,7 +119,7 @@ class _TanamanScreenState extends State<TanamanScreen> {
         children: <Widget>[
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 16.0,
               fontWeight: FontWeight.bold,
             ),

@@ -4,6 +4,8 @@ import 'package:tim1/services/suhu_service.dart';
 class MonitoringSuhu extends StatelessWidget {
   final SuhuService suhuService = SuhuService();
 
+  MonitoringSuhu({super.key});
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<Map<String, dynamic>>(
@@ -26,16 +28,16 @@ class MonitoringSuhu extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Monitoring Suhu',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 8),
-                Text(
+                const SizedBox(height: 8),
+                const Text(
                   'Kondisi suhu air hidroponik',
                   style: TextStyle(fontSize: 16),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 MonitoringBar(
                   title: 'Kelembapan',
                   value: kelembapan,
@@ -52,16 +54,16 @@ class MonitoringSuhu extends StatelessWidget {
                   title: 'Suhu Air',
                   value: suhuAir,
                   icon: Icons.thermostat,
-                  barColor: Color.fromARGB(255, 87, 175, 248),
+                  barColor: const Color.fromARGB(255, 87, 175, 248),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
               ],
             ),
           );
         } else if (snapshot.hasError) {
-          return Center(child: Text('Error loading data'));
+          return const Center(child: Text('Error loading data'));
         } else {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         }
       },
     );
@@ -75,6 +77,7 @@ class MonitoringBar extends StatelessWidget {
   final Color barColor;
 
   MonitoringBar({
+    super.key,
     required this.title,
     required this.value,
     required this.icon,
@@ -87,7 +90,7 @@ class MonitoringBar extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(title),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         Row(
           children: [
             Expanded(
@@ -98,9 +101,9 @@ class MonitoringBar extends StatelessWidget {
                 minHeight: 10,
               ),
             ),
-            SizedBox(width: 8),
+            const SizedBox(width: 8),
             Icon(icon, color: barColor),
-            SizedBox(width: 8),
+            const SizedBox(width: 8),
             Text('${value.toStringAsFixed(1)}°C'),
           ],
         ),

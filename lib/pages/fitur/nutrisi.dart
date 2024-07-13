@@ -5,7 +5,7 @@ class Nutrisi extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Nutrisi'),
+        title: const Text('Nutrisi'),
         centerTitle: true,
       ),
       body: Padding(
@@ -15,9 +15,9 @@ class Nutrisi extends StatelessWidget {
             // Header
             Container(
               width: double.infinity,
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               color: Colors.grey,
-              child: Center(
+              child: const Center(
                 child: Text(
                   'Nutrisi',
                   style: TextStyle(
@@ -28,7 +28,7 @@ class Nutrisi extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             // Main content
             Expanded(
               child: Row(
@@ -39,9 +39,9 @@ class Nutrisi extends StatelessWidget {
                     child: Column(
                       children: [
                         Container(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           color: Colors.white,
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               'Nutrisi Mix A & B',
                               style: TextStyle(
@@ -57,7 +57,7 @@ class Nutrisi extends StatelessWidget {
                               Expanded(
                                 child: Container(
                                   color: Colors.green,
-                                  child: Center(
+                                  child: const Center(
                                     child: Text(
                                       'A',
                                       style: TextStyle(
@@ -72,7 +72,7 @@ class Nutrisi extends StatelessWidget {
                               Expanded(
                                 child: Container(
                                   color: Colors.green,
-                                  child: Center(
+                                  child: const Center(
                                     child: Text(
                                       'B',
                                       style: TextStyle(
@@ -90,15 +90,15 @@ class Nutrisi extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   // Nilai PPM
                   Expanded(
                     child: Column(
                       children: [
                         Container(
-                          padding: EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(10),
                           color: Colors.white,
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               'Nilai PPM',
                               style: TextStyle(
