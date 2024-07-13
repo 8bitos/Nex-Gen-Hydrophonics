@@ -38,12 +38,12 @@ class _SuhuState extends State<Suhu> {
       backgroundColor: const Color.fromARGB(255, 241, 250, 244),
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
-        title: Text('Suhu'),
+        title: const Text('Suhu'),
         centerTitle: true,
         backgroundColor: Colors.white, // Example background color
         elevation: 4, // Example shadow elevation

@@ -19,37 +19,37 @@ class SuhuChart extends StatelessWidget {
 
           List<TemperaturePoint> suhuUdaraData = [
             TemperaturePoint(
-                suhuUdara, DateTime.now().subtract(Duration(minutes: 7))),
+                suhuUdara, DateTime.now().subtract(const Duration(minutes: 7))),
             TemperaturePoint(
-                suhuUdara, DateTime.now().subtract(Duration(minutes: 6))),
+                suhuUdara, DateTime.now().subtract(const Duration(minutes: 6))),
             TemperaturePoint(
-                suhuUdara, DateTime.now().subtract(Duration(minutes: 5))),
+                suhuUdara, DateTime.now().subtract(const Duration(minutes: 5))),
             TemperaturePoint(
-                suhuUdara, DateTime.now().subtract(Duration(minutes: 4))),
+                suhuUdara, DateTime.now().subtract(const Duration(minutes: 4))),
             TemperaturePoint(
-                suhuUdara, DateTime.now().subtract(Duration(minutes: 3))),
+                suhuUdara, DateTime.now().subtract(const Duration(minutes: 3))),
             TemperaturePoint(
-                suhuUdara, DateTime.now().subtract(Duration(minutes: 2))),
+                suhuUdara, DateTime.now().subtract(const Duration(minutes: 2))),
             TemperaturePoint(
-                suhuUdara, DateTime.now().subtract(Duration(minutes: 1))),
+                suhuUdara, DateTime.now().subtract(const Duration(minutes: 1))),
             TemperaturePoint(suhuUdara, DateTime.now()),
           ];
 
           List<TemperaturePoint> suhuAirData = [
             TemperaturePoint(
-                suhuAir, DateTime.now().subtract(Duration(minutes: 7))),
+                suhuAir, DateTime.now().subtract(const Duration(minutes: 7))),
             TemperaturePoint(
-                suhuAir, DateTime.now().subtract(Duration(minutes: 6))),
+                suhuAir, DateTime.now().subtract(const Duration(minutes: 6))),
             TemperaturePoint(
-                suhuAir, DateTime.now().subtract(Duration(minutes: 5))),
+                suhuAir, DateTime.now().subtract(const Duration(minutes: 5))),
             TemperaturePoint(
-                suhuAir, DateTime.now().subtract(Duration(minutes: 4))),
+                suhuAir, DateTime.now().subtract(const Duration(minutes: 4))),
             TemperaturePoint(
-                suhuAir, DateTime.now().subtract(Duration(minutes: 3))),
+                suhuAir, DateTime.now().subtract(const Duration(minutes: 3))),
             TemperaturePoint(
-                suhuAir, DateTime.now().subtract(Duration(minutes: 2))),
+                suhuAir, DateTime.now().subtract(const Duration(minutes: 2))),
             TemperaturePoint(
-                suhuAir, DateTime.now().subtract(Duration(minutes: 1))),
+                suhuAir, DateTime.now().subtract(const Duration(minutes: 1))),
             TemperaturePoint(suhuAir, DateTime.now()),
           ];
 
@@ -58,28 +58,28 @@ class SuhuChart extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Monitoring Suhu',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 8),
-                Text(
+                const SizedBox(height: 8),
+                const Text(
                   'Kondisi suhu air hidroponik',
                   style: TextStyle(fontSize: 16),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 CombinedLineChart(
                   suhuUdaraData: suhuUdaraData,
                   suhuAirData: suhuAirData,
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
               ],
             ),
           );
         } else if (snapshot.hasError) {
-          return Center(child: Text('Error loading data'));
+          return const Center(child: Text('Error loading data'));
         } else {
-          return Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator());
         }
       },
     );
@@ -116,7 +116,7 @@ class CombinedLineChart extends StatelessWidget {
             ),
             LineChartBarData(
               isCurved: true,
-              color: Color.fromARGB(255, 87, 175, 248),
+              color: const Color.fromARGB(255, 87, 175, 248),
               barWidth: 4,
               belowBarData: BarAreaData(show: false),
               spots: List.generate(suhuAirData.length, (index) {
@@ -140,7 +140,7 @@ class CombinedLineChart extends StatelessWidget {
               ),
             ],
           ),
-          titlesData: FlTitlesData(
+          titlesData: const FlTitlesData(
             leftTitles: AxisTitles(
               sideTitles: SideTitles(showTitles: true),
             ),
@@ -154,7 +154,7 @@ class CombinedLineChart extends StatelessWidget {
               sideTitles: SideTitles(showTitles: false),
             ),
           ),
-          gridData: FlGridData(show: true),
+          gridData: const FlGridData(show: true),
           borderData: FlBorderData(show: true),
         ),
       ),

@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     _pages.addAll([
       HomePageContent(),
-      Dashboard(),
+      const Dashboard(),
       ProfilePage(
           onLogout: signUserOut,
           email: user.email ?? 'No Email'), // Pass the email here
@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
       key: _scaffoldKey,
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.menu),
+          icon: const Icon(Icons.menu),
           onPressed: () {
             _scaffoldKey.currentState!.openDrawer();
           },
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(
                 color: Color.fromARGB(192, 22, 182, 43),
               ),
@@ -80,21 +80,21 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             ListTile(
-              title: Text('Dashboard'),
+              title: const Text('Dashboard'),
               onTap: () {
                 _onNavBarTap(1); // Navigate to Dashboard page
                 Navigator.pop(context); // Close the drawer
               },
             ),
             ListTile(
-              title: Text('Profile'),
+              title: const Text('Profile'),
               onTap: () {
                 _onNavBarTap(2); // Navigate to Profile page
                 Navigator.pop(context); // Close the drawer
               },
             ),
             ListTile(
-              title: Text('Logout'),
+              title: const Text('Logout'),
               onTap: () {
                 signUserOut(); // Log out user
                 Navigator.pop(context); // Close the drawer
@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      backgroundColor: Color.fromARGB(192, 22, 182, 43),
+      backgroundColor: const Color.fromARGB(192, 22, 182, 43),
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavBar(
         onTap: _onNavBarTap,
@@ -119,7 +119,7 @@ class HomePageContent extends StatelessWidget {
     final List<Map<String, dynamic>> gridItems = [
       {"text": 'Kapasitas', "icon": Icons.storage, "page": Kapasitas()},
       {"text": 'Suhu', "icon": Icons.thermostat, "page": Suhu()},
-      {"text": 'Kamera', "icon": Icons.camera_alt, "page": Kamera()},
+      {"text": 'Kamera', "icon": Icons.camera_alt, "page": const Kamera()},
       {"text": 'Tanaman', "icon": Icons.grass, "page": TanamanScreen()},
     ];
 
@@ -164,7 +164,7 @@ class HomePageContent extends StatelessWidget {
                                 color: Colors.black.withOpacity(0.2),
                                 spreadRadius: 2,
                                 blurRadius: 5,
-                                offset: Offset(0, 3),
+                                offset: const Offset(0, 3),
                               ),
                             ],
                           ),
@@ -214,7 +214,7 @@ class _ClockWidgetState extends State<ClockWidget> {
     super.initState();
     _timeString = _formatTime(DateTime.now());
     _dateString = _formatDate(DateTime.now());
-    Timer.periodic(Duration(seconds: 1), (Timer t) => _getTime());
+    Timer.periodic(const Duration(seconds: 1), (Timer t) => _getTime());
   }
 
   void _getTime() {
@@ -244,22 +244,22 @@ class _ClockWidgetState extends State<ClockWidget> {
         children: <Widget>[
           Text(
             _timeString,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 50,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             _dateString,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 20,
             ),
           ),
-          SizedBox(height: 10),
-          Text(
+          const SizedBox(height: 10),
+          const Text(
             'Welcome',
             // ${user.displayName ?? user.email!.split('@')[0]}',
             style: TextStyle(
@@ -267,7 +267,7 @@ class _ClockWidgetState extends State<ClockWidget> {
               fontSize: 18,
             ),
           ),
-          Text(
+          const Text(
             'To Next-Gen Hydroponics App',
             style: TextStyle(
               color: Colors.white,
