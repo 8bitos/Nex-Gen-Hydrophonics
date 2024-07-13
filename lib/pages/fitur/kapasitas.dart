@@ -1,9 +1,12 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:tim1/services/capacity_service.dart'; // Import CapacityService
 
 class Kapasitas extends StatefulWidget {
   @override
+  // ignore: library_private_types_in_public_api
   _KapasitasState createState() => _KapasitasState();
 }
 

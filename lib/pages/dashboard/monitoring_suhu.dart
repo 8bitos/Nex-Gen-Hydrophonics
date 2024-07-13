@@ -13,8 +13,7 @@ class MonitoringSuhu extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           final temperatureData = snapshot.data!;
-          print(
-              'Temperature Data: $temperatureData'); // Log the data for debugging
+          // Log the data for debugging
 
           final double kelembapan =
               double.tryParse(temperatureData['kelembaban'] ?? '0') ?? 0.0;
@@ -76,7 +75,7 @@ class MonitoringBar extends StatelessWidget {
   final IconData icon;
   final Color barColor;
 
-  MonitoringBar({
+  const MonitoringBar({
     super.key,
     required this.title,
     required this.value,

@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -39,7 +41,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     _pages.addAll([
-      HomePageContent(),
+      const HomePageContent(),
       const Dashboard(),
       ProfilePage(
           onLogout: signUserOut,
@@ -47,7 +49,7 @@ class _HomePageState extends State<HomePage> {
     ]);
   }
 
-  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -114,6 +116,8 @@ class _HomePageState extends State<HomePage> {
 }
 
 class HomePageContent extends StatelessWidget {
+  const HomePageContent({super.key});
+
   @override
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> gridItems = [
@@ -128,7 +132,7 @@ class HomePageContent extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: <Widget>[
-            ClockWidget(), // Add this to display the clock and date
+            const ClockWidget(), // Add this to display the clock and date
             const SizedBox(height: 20),
             const SizedBox(height: 20),
             Expanded(
@@ -201,6 +205,8 @@ class HomePageContent extends StatelessWidget {
 }
 
 class ClockWidget extends StatefulWidget {
+  const ClockWidget({super.key});
+
   @override
   _ClockWidgetState createState() => _ClockWidgetState();
 }

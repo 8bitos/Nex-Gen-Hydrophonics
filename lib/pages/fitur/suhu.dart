@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:tim1/charts/chart.dart';
@@ -29,6 +31,7 @@ class _SuhuState extends State<Suhu> {
       setState(() {
         weatherData = data;
       });
+      // ignore: empty_catches
     } catch (e) {}
   }
 

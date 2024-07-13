@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api, prefer_final_fields
+
 import 'package:flutter/material.dart';
 import 'package:tim1/model/model_tanaman.dart';
 import 'package:tim1/services/tanaman_service.dart';

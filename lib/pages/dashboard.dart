@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:tim1/pages/dashboard/grow_light.dart';
@@ -9,7 +11,7 @@ import 'package:tim1/pages/dashboard/saluran_irigasi.dart';
 import 'package:tim1/services/control_service.dart';
 
 class Dashboard extends StatefulWidget {
-  const Dashboard({Key? key}) : super(key: key);
+  const Dashboard({super.key});
 
   @override
   State<Dashboard> createState() => _DashboardState();
@@ -19,6 +21,7 @@ class _DashboardState extends State<Dashboard> {
   final ControlService controlService = ControlService();
   Map<String, bool> controls = {};
   bool isAutomatic = false;
+  // ignore: deprecated_member_use
   final databaseReference = FirebaseDatabase.instance.reference();
 
   final Map<String, String> controlLabels = {

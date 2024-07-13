@@ -8,6 +8,7 @@ class MonitoringPestisida extends StatelessWidget {
   final Map<String, bool> controls;
   final Function(String, bool) updateControl;
 
+  // ignore: use_super_parameters
   MonitoringPestisida({
     Key? key,
     required this.isAutomatic,

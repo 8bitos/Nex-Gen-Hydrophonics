@@ -5,8 +5,10 @@ class ProfilePage extends StatelessWidget {
   final VoidCallback onLogout;
   final String email; // Add this line
 
-  const ProfilePage({Key? key, required this.onLogout, required this.email})
-      : super(key: key); // Modify constructor
+  const ProfilePage(
+      {super.key,
+      required this.onLogout,
+      required this.email}); // Modify constructor
 
   @override
   Widget build(BuildContext context) {

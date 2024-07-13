@@ -8,6 +8,7 @@ class SaluranIrigasi extends StatelessWidget {
   final Map<String, bool> controls;
   final Function(String, bool) updateControl;
 
+  // ignore: use_super_parameters
   SaluranIrigasi({
     Key? key,
     required this.isAutomatic,

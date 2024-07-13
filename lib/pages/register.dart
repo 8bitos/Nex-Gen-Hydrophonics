@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, deprecated_member_use
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +38,6 @@ class _RegisterPageState extends State<RegisterPage> {
       // Example:
       // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
     } catch (e) {
-      print('Failed to register user: $e');
       // Handle registration errors
     }
   }

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:tim1/services/capacity_service.dart';
@@ -9,11 +11,11 @@ class MonitoringPhair extends StatelessWidget {
   final Function(String, bool) updateControl;
 
   MonitoringPhair({
-    Key? key,
+    super.key,
     required this.isAutomatic,
     required this.controls,
     required this.updateControl,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +126,8 @@ class MonitoringBar extends StatelessWidget {
   final IconData icon;
   final Color barColor;
 
-  MonitoringBar({
+  const MonitoringBar({
+    super.key,
     required this.title,
     required this.value,
     required this.icon,
@@ -151,7 +154,7 @@ class MonitoringBar extends StatelessWidget {
             const SizedBox(width: 8),
             Icon(icon, color: barColor),
             const SizedBox(width: 8),
-            Text('${value.toStringAsFixed(1)}'),
+            Text(value.toStringAsFixed(1)),
           ],
         ),
       ],

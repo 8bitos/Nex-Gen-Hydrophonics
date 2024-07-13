@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:firebase_database/firebase_database.dart';
 import 'package:intl/intl.dart';
 
@@ -6,9 +8,10 @@ class CabaiService {
 
   Future<String?> getTanggalTanamFormatted() async {
     try {
-      DataSnapshot snapshot =
-          (await _db.child('settings/tanaman/tanggal_tanam/Cabai').once()) as DataSnapshot;
-      
+      DataSnapshot snapshot = (await _db
+          .child('settings/tanaman/tanggal_tanam/Cabai')
+          .once()) as DataSnapshot;
+
       dynamic value = snapshot.value;
       if (value is String) {
         // Parse the date string
@@ -20,16 +23,16 @@ class CabaiService {
         return null; // Handle case where data doesn't exist or is of unexpected type
       }
     } catch (e) {
-      print('Error fetching tanggal tanam: $e');
       return null; // Return null or handle error as appropriate
     }
   }
 
   Future<String?> getTanggalPanenFormatted() async {
     try {
-      DataSnapshot snapshot =
-          (await _db.child('settings/tanaman/tanggal_panen/Cabai').once()) as DataSnapshot;
-      
+      DataSnapshot snapshot = (await _db
+          .child('settings/tanaman/tanggal_panen/Cabai')
+          .once()) as DataSnapshot;
+
       dynamic value = snapshot.value;
       if (value is String) {
         // Parse the date string
@@ -41,7 +44,6 @@ class CabaiService {
         return null; // Handle case where data doesn't exist or is of unexpected type
       }
     } catch (e) {
-      print('Error fetching tanggal panen: $e');
       return null; // Return null or handle error as appropriate
     }
   }

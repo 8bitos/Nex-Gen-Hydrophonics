@@ -46,7 +46,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '985311867674',
     projectId: 'research-nextgenhydroponics',
     authDomain: 'research-nextgenhydroponics.firebaseapp.com',
-    databaseURL: 'https://research-nextgenhydroponics-default-rtdb.asia-southeast1.firebasedatabase.app',
+    databaseURL:
+        'https://research-nextgenhydroponics-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'research-nextgenhydroponics.appspot.com',
     measurementId: 'G-YH8BSRWRJD',
   );
@@ -56,7 +57,8 @@ class DefaultFirebaseOptions {
     appId: '1:985311867674:android:a039743a80c78a33fdf2a3',
     messagingSenderId: '985311867674',
     projectId: 'research-nextgenhydroponics',
-    databaseURL: 'https://research-nextgenhydroponics-default-rtdb.asia-southeast1.firebasedatabase.app',
+    databaseURL:
+        'https://research-nextgenhydroponics-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'research-nextgenhydroponics.appspot.com',
   );
 
@@ -65,9 +67,11 @@ class DefaultFirebaseOptions {
     appId: '1:985311867674:ios:0ea501a7b4912c3bfdf2a3',
     messagingSenderId: '985311867674',
     projectId: 'research-nextgenhydroponics',
-    databaseURL: 'https://research-nextgenhydroponics-default-rtdb.asia-southeast1.firebasedatabase.app',
+    databaseURL:
+        'https://research-nextgenhydroponics-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'research-nextgenhydroponics.appspot.com',
-    iosClientId: '985311867674-thq5rb9rum5quq59g7a23tps0pvk0p18.apps.googleusercontent.com',
+    iosClientId:
+        '985311867674-thq5rb9rum5quq59g7a23tps0pvk0p18.apps.googleusercontent.com',
     iosBundleId: 'com.example.tim1',
   );
 
@@ -76,9 +80,11 @@ class DefaultFirebaseOptions {
     appId: '1:985311867674:ios:0ea501a7b4912c3bfdf2a3',
     messagingSenderId: '985311867674',
     projectId: 'research-nextgenhydroponics',
-    databaseURL: 'https://research-nextgenhydroponics-default-rtdb.asia-southeast1.firebasedatabase.app',
+    databaseURL:
+        'https://research-nextgenhydroponics-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'research-nextgenhydroponics.appspot.com',
-    iosClientId: '985311867674-thq5rb9rum5quq59g7a23tps0pvk0p18.apps.googleusercontent.com',
+    iosClientId:
+        '985311867674-thq5rb9rum5quq59g7a23tps0pvk0p18.apps.googleusercontent.com',
     iosBundleId: 'com.example.tim1',
   );
 
@@ -88,7 +94,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '985311867674',
     projectId: 'research-nextgenhydroponics',
     authDomain: 'research-nextgenhydroponics.firebaseapp.com',
-    databaseURL: 'https://research-nextgenhydroponics-default-rtdb.asia-southeast1.firebasedatabase.app',
+    databaseURL:
+        'https://research-nextgenhydroponics-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'research-nextgenhydroponics.appspot.com',
     measurementId: 'G-XV7QRLP9JC',
   );
