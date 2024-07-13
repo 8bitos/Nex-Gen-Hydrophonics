@@ -47,32 +47,33 @@ class _KapasitasState extends State<Kapasitas> {
         key: scaffoldKey,
         appBar: AppBar(
           leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
             onPressed: () {
               Navigator.of(context).pop();
             },
           ),
-          title: Text('Kapasitas'),
+          title: const Text('Kapasitas'),
           centerTitle: true,
           backgroundColor: Colors.white, // Example background color
           elevation: 4, // Example shadow elevation
         ),
-        backgroundColor: Color.fromARGB(192, 22, 182, 43),
+        backgroundColor: const Color.fromARGB(192, 22, 182, 43),
         body: SafeArea(
           top: true,
           child: SingleChildScrollView(
             child: Container(
-              margin: EdgeInsets.all(10.0), // Add margin for shadow
-              padding: EdgeInsets.all(10.0), // Add padding for content spacing
+              margin: const EdgeInsets.all(10.0), // Add margin for shadow
+              padding:
+                  const EdgeInsets.all(10.0), // Add padding for content spacing
               decoration: BoxDecoration(
-                color: Color.fromARGB(
+                color: const Color.fromARGB(
                     192, 22, 182, 43), // Background color of the container
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5), // Shadow color
                     spreadRadius: 5,
                     blurRadius: 70,
-                    offset: Offset(0, 3), // Offset of the shadow
+                    offset: const Offset(0, 3), // Offset of the shadow
                   ),
                 ],
               ),
@@ -123,7 +124,7 @@ class _KapasitasState extends State<Kapasitas> {
                   PieChartData(
                     sections: [
                       PieChartSectionData(
-                        color: Color.fromARGB(255, 233, 232, 232),
+                        color: const Color.fromARGB(255, 233, 232, 232),
                         value: remainingPercentage,
                         radius: 30.0,
                       ),
@@ -144,7 +145,7 @@ class _KapasitasState extends State<Kapasitas> {
               ),
               Text(
                 '${kapasitasPercentage.toStringAsFixed(2)}%',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: Color.fromARGB(255, 0, 0, 0),
@@ -152,27 +153,27 @@ class _KapasitasState extends State<Kapasitas> {
               ),
             ],
           ),
-          SizedBox(width: 20),
+          const SizedBox(width: 20),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Text(
                 'Kapasitas Tersisa: ${capacityData[dataKey] ?? 'N/A'}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                 ),
               ),
               Text(
                 'Larutan Keluar: ${remainingValue.toStringAsFixed(0)}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                 ),
               ),

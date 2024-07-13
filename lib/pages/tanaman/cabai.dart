@@ -23,17 +23,15 @@ class CabaiCard extends StatelessWidget {
             const SizedBox(height: 16),
             Row(
               children: [
-                Expanded(
+                const Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Status Tanaman     : Tumbuh'),
-                      const Text(
-                          'Tanggal Tanam      : 02-05-2024 06:59:00 WITA'),
-                      const Text(
-                          'Tanggal Panen      : 02-08-2024 06:59:00 WITA'),
-                      const Text('Usia Tanaman       : 68 Hari'),
-                      const Text('Estimasi Panen     : 23 Hari'),
+                      Text('Status Tanaman     : Tumbuh'),
+                      Text('Tanggal Tanam      : 02-05-2024 06:59:00 WITA'),
+                      Text('Tanggal Panen      : 02-08-2024 06:59:00 WITA'),
+                      Text('Usia Tanaman       : 68 Hari'),
+                      Text('Estimasi Panen     : 23 Hari'),
                     ],
                   ),
                 ),

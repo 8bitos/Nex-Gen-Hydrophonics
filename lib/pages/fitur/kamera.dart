@@ -16,12 +16,12 @@ class _KameraState extends State<Kamera> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
-        title: Text('Kamera'),
+        title: const Text('Kamera'),
         centerTitle: true,
         backgroundColor: Colors.white, // Example background color
         elevation: 4, // Example shadow elevation
@@ -30,13 +30,13 @@ class _KameraState extends State<Kamera> {
         stream: _imageService.getImageUrls(),
         builder: (context, AsyncSnapshot<Map<String, String>?> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return Center(child: CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
             return Center(child: Text('Error: ${snapshot.error}'));
           } else if (!snapshot.hasData ||
               snapshot.data == null ||
               snapshot.data!.isEmpty) {
-            return Center(child: Text('No data available'));
+            return const Center(child: Text('No data available'));
           } else {
             final imageUrls = snapshot.data!; // Accessing non-null data safely
 
@@ -54,7 +54,7 @@ class _KameraState extends State<Kamera> {
                       child: Column(
                         children: [
                           ClipRRect(
-                            borderRadius: BorderRadius.vertical(
+                            borderRadius: const BorderRadius.vertical(
                               top: Radius.circular(10),
                             ),
                             child: Image.network(
@@ -66,7 +66,7 @@ class _KameraState extends State<Kamera> {
                                 return Container(
                                   height: 200,
                                   color: Colors.black,
-                                  child: Center(
+                                  child: const Center(
                                     child: Text(
                                       'Camera failed to load',
                                       style: TextStyle(
@@ -79,7 +79,7 @@ class _KameraState extends State<Kamera> {
                               },
                             ),
                           ),
-                          ListTile(
+                          const ListTile(
                             title: Text('Live Camera'),
                             subtitle: Text('No motion detected'),
                             trailing: Icon(Icons.more_vert),
@@ -87,7 +87,7 @@ class _KameraState extends State<Kamera> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                     // Second card
                     Card(
                       elevation: 4,
@@ -97,7 +97,7 @@ class _KameraState extends State<Kamera> {
                       child: Column(
                         children: [
                           ClipRRect(
-                            borderRadius: BorderRadius.vertical(
+                            borderRadius: const BorderRadius.vertical(
                               top: Radius.circular(10),
                             ),
                             child: Image.network(
@@ -109,7 +109,7 @@ class _KameraState extends State<Kamera> {
                                 return Container(
                                   height: 200,
                                   color: Colors.black,
-                                  child: Center(
+                                  child: const Center(
                                     child: Text(
                                       'Camera failed to load',
                                       style: TextStyle(
@@ -122,7 +122,7 @@ class _KameraState extends State<Kamera> {
                               },
                             ),
                           ),
-                          ListTile(
+                          const ListTile(
                             title: Text('Kamera Pendeteksi Hama'),
                             subtitle: Text('No motion detected'),
                             trailing: Icon(Icons.more_vert),
