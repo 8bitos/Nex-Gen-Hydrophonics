@@ -54,9 +54,9 @@ dependencies:
   syncfusion_flutter_gauges: ^21.2.4
   percent_indicator: ^4.2.3
   intl: ^0.17.0
-  mockito: ^5.0.0
-  firebase_core_platform_interface: ^4.0.0
-  firebase_auth_platform_interface: ^6.0.0
+  mockito: ^5.4.4
+  firebase_core_platform_interface: ^5.1.0
+  firebase_auth_platform_interface: ^7.3.0
 
 dev_dependencies:
   flutter_test:
