@@ -21,7 +21,7 @@ jobs:
       # Install Flutter
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.3.0'  # You can specify the Flutter version you need
+          flutter-version: '3.22.0'  # You can specify the Flutter version you need
 
       # Note: This workflow uses the latest stable version of the Dart SDK.
       # You can specify other versions if desired, see documentation here:
