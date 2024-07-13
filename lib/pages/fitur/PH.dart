@@ -329,7 +329,7 @@ class LineChartWidget extends StatelessWidget {
   final List<double> suhuUdara;
   final List<double> kelembaban;
 
-  LineChartWidget({
+  const LineChartWidget({
     super.key,
     required this.suhuAir,
     required this.suhuUdara,

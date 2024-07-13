@@ -53,6 +53,7 @@ dependencies:
   speedometer_chart: ^1.0.8
   syncfusion_flutter_gauges: ^21.2.4
   percent_indicator: ^4.2.3
+  intl: ^0.17.0
  
 
 dev_dependencies:

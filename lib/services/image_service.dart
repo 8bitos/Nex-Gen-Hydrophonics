@@ -1,7 +1,10 @@
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:firebase_database/firebase_database.dart';
 
 class ImageService {
   final DatabaseReference _databaseReference =
+      // ignore: deprecated_member_use
       FirebaseDatabase.instance.reference().child('esp32cam');
 
   Stream<Map<String, String>> getImageUrls() {

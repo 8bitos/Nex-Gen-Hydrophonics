@@ -1,3 +1,5 @@
+// ignore_for_file: use_super_parameters
+
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:tim1/services/capacity_service.dart';
@@ -54,8 +56,7 @@ class MonitoringNutrisi extends StatelessWidget {
             children: [
               const Text(
                 'Monitoring dan Kontrol Nutrisi',
-                style:
-                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               const Text(
                 'Atur nutrisi tanaman',
@@ -127,7 +128,8 @@ class MonitoringBar extends StatelessWidget {
   final IconData icon;
   final Color barColor;
 
-  MonitoringBar({
+  const MonitoringBar({
+    super.key,
     required this.title,
     required this.value,
     required this.icon,
@@ -154,7 +156,7 @@ class MonitoringBar extends StatelessWidget {
             const SizedBox(width: 8),
             Icon(icon, color: barColor),
             const SizedBox(width: 8),
-            Text('${value.toStringAsFixed(1)}'),
+            Text(value.toStringAsFixed(1)),
           ],
         ),
       ],

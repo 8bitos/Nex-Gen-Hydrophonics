@@ -5,6 +5,8 @@ import 'package:tim1/services/suhu_service.dart';
 import 'package:tim1/services/weather_service.dart';
 
 class Suhu extends StatefulWidget {
+  const Suhu({super.key});
+
   @override
   _SuhuState createState() => _SuhuState();
 }
@@ -27,9 +29,7 @@ class _SuhuState extends State<Suhu> {
       setState(() {
         weatherData = data;
       });
-    } catch (e) {
-      print('Failed to fetch weather data: $e');
-    }
+    } catch (e) {}
   }
 
   @override
@@ -69,23 +69,8 @@ class _SuhuState extends State<Suhu> {
                 double.tryParse(temperatureMap['kelembaban'] ?? '0') ?? 0.0;
 
             // Safely handle null values and default to empty lists if data is not available
-            final suhuAirList = (temperatureMap['suhuAirList'] as List?)
-                    ?.map((e) => double.parse(e.toString()))
-                    .toList() ??
-                [];
-            final suhuUdaraList = (temperatureMap['suhuUdaraList'] as List?)
-                    ?.map((e) => double.parse(e.toString()))
-                    .toList() ??
-                [];
-            final kelembabanList = (temperatureMap['kelembabanList'] as List?)
-                    ?.map((e) => double.parse(e.toString()))
-                    .toList() ??
-                [];
 
             // Debugging statements to check data being passed to the chart
-            print('suhuAirList: $suhuAirList');
-            print('suhuUdaraList: $suhuUdaraList');
-            print('kelembabanList: $kelembabanList');
 
             return Padding(
               padding: const EdgeInsets.all(16.0),

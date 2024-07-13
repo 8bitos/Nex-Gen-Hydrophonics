@@ -5,6 +5,8 @@ import 'package:tim1/services/suhu_service.dart';
 class SuhuChart extends StatelessWidget {
   final SuhuService suhuService = SuhuService();
 
+  SuhuChart({super.key});
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<Map<String, dynamic>>(
@@ -92,14 +94,15 @@ class CombinedLineChart extends StatelessWidget {
   static const double upperBound = 80.0;
   static const double lowerBound = -50.0;
 
-  CombinedLineChart({
+  const CombinedLineChart({
+    super.key,
     required this.suhuUdaraData,
     required this.suhuAirData,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200,
       child: LineChart(
         LineChartData(

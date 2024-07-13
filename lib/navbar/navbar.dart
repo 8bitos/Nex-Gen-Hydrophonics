@@ -6,30 +6,32 @@ class BottomNavBar extends StatefulWidget {
   final Function(int) onTap;
   final int currentIndex;
 
-  BottomNavBar({required this.onTap, required this.currentIndex});
+  // ignore: prefer_const_constructors_in_immutables
+  BottomNavBar({super.key, required this.onTap, required this.currentIndex});
 
   @override
+  // ignore: library_private_types_in_public_api
   _BottomNavBarState createState() => _BottomNavBarState();
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+  final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
       key: _bottomNavigationKey,
       index: widget.currentIndex,
-      items: [
-        const CurvedNavigationBarItem(
-          child: const Icon(Icons.home),
+      items: const [
+        CurvedNavigationBarItem(
+          child: Icon(Icons.home),
           label: 'Home',
         ),
-        const CurvedNavigationBarItem(
+        CurvedNavigationBarItem(
           child: Icon(Icons.dashboard),
           label: 'Dashboard',
         ),
-        const CurvedNavigationBarItem(
+        CurvedNavigationBarItem(
           child: Icon(Icons.person),
           label: 'Profile',
         ),
