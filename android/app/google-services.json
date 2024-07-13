@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "985311867674",
+    "firebase_url": "https://research-nextgenhydroponics-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "research-nextgenhydroponics",
+    "storage_bucket": "research-nextgenhydroponics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985311867674:android:a039743a80c78a33fdf2a3",
+        "android_client_info": {
+          "package_name": "com.tim1.nextgenhydroponics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985311867674-23uub7v5c181fv41jfr2mjnt8uktea2t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP7Ky5iJxnIQDRFxqGInr7_qTB3KYo1iU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985311867674-23uub7v5c181fv41jfr2mjnt8uktea2t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
